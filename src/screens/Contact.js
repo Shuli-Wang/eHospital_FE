@@ -14,7 +14,7 @@ const Contact = () => {
               <div><h1>How can we help you?</h1></div>
               <div><cu2>We’ll get back to you within 7 working days.</cu2></div>
 
-              <div><cu2>We’ll get back to szdkfhskvgskfcsedhkfcyou within 7 working days.</cu2></div>
+              <div><cu2>Wdsdhfng days.</cu2></div>
 
 
               <select className="bg-gray-50 border border-gray-300  

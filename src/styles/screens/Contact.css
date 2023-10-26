@@ -177,4 +177,5 @@ button[type=submit]:hover {
   background-color: rgba(173, 201, 199, 0.306);
   padding: 20px;
   min-height: 1020px;
+  height: fit-content;
 }

@@ -62,7 +62,6 @@ const Contact = () => {
     <div className='container'>
       <div className='row'>
         <div className='col-12 text-center'>
-          <div className='contactForm'>
             {/* <form id='contact-form' noValidate> */}
             <div><h1>How can we help you?</h1></div>
             <div><h3>We’ll get back to you within 7 working days.</h3></div>
@@ -147,7 +146,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

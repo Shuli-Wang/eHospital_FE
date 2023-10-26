@@ -5,16 +5,77 @@
 
 h1 {
   font-size: 36px;
-  text-align:center;
-  margin: 20px;
-  color: #069ab8;
-  background-color: #ffffff;
+  margin: 10px;  
+  color:  lightseagreen;
+  font-family: 'Poppins', sans-serif!important;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 10px;
+  color: rgb(111, 184, 180);
+  font-family: 'Poppins', sans-serif!important;
+  
 }
 
 
-.contact-page cu2 {
-  font-size: 24px;
-  text-align:center;
-  margin: 20px;
-  color: #069ab8;
+input[type=text], select, textarea {
+  font-family: 'Poppins', sans-serif!important;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border-radius: 5px;
+  border-bottom: 4px solid rgb(111, 184, 180);
+border-top:0px;  
+border-left:0px;  
+border-right:0px;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  
+}
+
+input[type=email], select, textarea {
+  font-family: 'Poppins', sans-serif!important;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border-radius: 5px;
+  border-bottom: 4px solid rgb(111, 184, 180); 
+border-top:0px;  
+border-left:0px;  
+border-right:0px;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+button[type=submit] {
+  font-family: 'Poppins', sans-serif!important;
+  border-radius: 20px;
+  border: 2px solid lightseagreen;
+  background-color: white;
+  color: lightseagreen;
+  padding: 12px 20px;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+button[type=submit]:hover {
+  font-family: 'Poppins', sans-serif!important;
+  border-radius: 20px;
+    border: 2px solid lightseagreen;
+  color:  white;
+  background-color: lightseagreen;
+  float: right;
+  font-weight: bold;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  background-color: rgba(173, 201, 199, 0.306);
+  padding: 20px;
 }

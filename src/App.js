@@ -7,6 +7,7 @@ import Searchpatient from './screens/searchpatient';
 import Searchresult from './screens/searchresult';
 import Header from './components/Header-new';
 import Footer from './components/footer-new';
+import ContactAdmin from './screens/ContactAdmin';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Searchresult" element={<Searchresult />} />
         <Route path="/DBConnection" element={<DBConnection />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/ContactAdmin" element={<ContactAdmin />} />
       </Routes>
       <Footer />
     </BrowserRouter>

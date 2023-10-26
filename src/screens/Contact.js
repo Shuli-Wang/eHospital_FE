@@ -12,7 +12,7 @@ const Contact = () => {
             <div className='contactForm'>
               <form id='contact-form' noValidate>
               <div><h1>How can we help you?</h1></div>
-              <div><cu2>We’ll get back to you within 7 working days.</cu2></div>
+              <div><h3>We’ll get back to you within 7 working days.</h3></div>
               <select className="bg-gray-50 border border-gray-300  
                                         text-gray-600 text-sm rounded-lg  
                                         focus:border-blue-500 w-full p-2.5"> 
@@ -73,7 +73,7 @@ const Contact = () => {
                 <div className='row formRow'>
                   <div className='col'>
                     <textarea
-                      rows={3}
+                      rows={5}
                       name='contactMessage'
                       className='form-control formInput'
                       placeholder='Max Allowed Characters:6000'
@@ -84,7 +84,10 @@ const Contact = () => {
                 <button className='submit-btn' type='submit'>
                   Submit
                 </button>
+
+                
               </form>
+              <a href="/ContactAdmin">ContactA</a><br></br>
             </div>
           </div>
         </div>

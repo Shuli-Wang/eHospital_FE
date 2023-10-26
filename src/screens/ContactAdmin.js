@@ -5,7 +5,24 @@ import React from 'react';
 const ContactAdmin = () => {
   
   return (
-      <div>This is contact admin page</div>
+      <div className="ContactAdmin">
+
+       <div>This is contact admin page</div>
+       <table border={1}>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+            </tr>
+
+
+
+
+       </table>
+
+   </div>
+
+      
     
 
   );

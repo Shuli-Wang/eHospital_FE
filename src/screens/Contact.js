@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //import '../styles/screens/ContactPage.css';
 import '../styles/screens/Contact.css';
+import axios from "axios"
 
 
 const Contact = () => {
@@ -23,8 +24,17 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  let handleSubmit = async(e) => {
     e.preventDefault()
+    try{
+      alert ("Submitted!!!!!!!!!!!!!")
+      axios.post("http://localhost:8080/contact",{
+        formData
+      })
+    }
+    catch(e) {
+      console.log(e);
+    }
     const validationErrors = {}
   //   if(!formData.contactTopic.trim()) {
   //     validationErrors.contactTopic = "Topic is required"
@@ -55,8 +65,10 @@ const Contact = () => {
 
     if(Object.keys(validationErrors).length === 0) {
         alert("Form Submitted successfully")
-    }
 
+    }
+    
+ 
   }
 
   return (
@@ -70,28 +82,32 @@ const Contact = () => {
     <div><h3>We’ll get back to you within 7 working days.</h3></div>
 
     <form onSubmit={handleSubmit}>
-    <select className="bg-gray-2 border border-gray-1  
+    <select name = "contactTopic" class="bg-gray-2 border border-gray-1  
                                         text-gray-10 text-sm rounded-lg  
-                                        focus:border-blue-5 w-full p-2.5"  > 
+                                        focus:border-blue-5 w-full p-2.5" onChange={handleChange} > 
                         {/* <option value = ""></option> */}
-                        <option value="contactTopic" > 
+                        <option value="1"> 
                             Choose Topic 
-                        </option> 
-                        <option value="contactTopic"> 
+                            
+                        </option>
+                        
+                        <option value="2"> 
                             Doctor Related Queries 
+                            
                         </option> 
-                        <option value="contactTopic"> 
+                        <option value="3"> 
                             Suggestions
                         </option> 
-                        <option value="contactTopic"> 
+                        <option value="4"> 
                             Feedback
                         </option> 
-                        <option value="contactTopic"> 
-                            Techinical Issue Reports
+                        <option value="5"> 
+                            Technical Issue Reports
                         </option> 
-                        
+                       
                         {/* <option disabled selected></span>}</option> */}
                         {/* {errors.contactTopic && <span>{errors.contactTopic}</span>}  */}
+                        
                     </select> 
                     
                     {/* <div class="invalid-feedback">Select and option</div> */}

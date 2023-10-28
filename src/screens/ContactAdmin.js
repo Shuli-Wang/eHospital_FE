@@ -1,44 +1,35 @@
-import '../styles/screens/ContactAdmin.css';
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPatientRegistration } from '../redux/actions/contactActions';
+import { fetchContactUs } from '../redux/actions/userActions';
+import { fetchUsers, fetchPatientRegistration } from '../redux/actions/userActions';
+import '../styles/screens/ContactAdmin.css';
+import { Checkbox } from '@mui/material';
 
 
 function ContactAdmin() {
   const dispatch = useDispatch();
-  const tableNames = useSelector((state) => state.user.users);
-  const patientRegistrationData = useSelector((state) => state.user.patientRegistrationData);
+  const contactUsData = useSelector((state) => state.user.contactUsData);
   const [showTable, setShowTable] = useState(false);
 
-  useEffect(() => {
-    // Check if tableNames have data, then show the table
-    if (tableNames.length > 0) {
-      setShowTable(true);
-    } else {
-      setShowTable(false);
-    }
-  }, [tableNames]);
-
-
-  const handleFetchPatientRegistration = () => {
+  const handleFetchContactUs = () => {
     // Clear the table and show loading state
     setShowTable(false);
 
-    dispatch(fetchPatientRegistration());
+    dispatch(fetchContactUs());
   };
 
-  
+
   return (
-      <div className="ContactAdmin">
+    <div className="ContactAdmin">
       <div className='container'>
-       <button type="refreshContactAdmin" onClick={handleFetchPatientRegistration}>
-        Refresh
-      </button>
-      <br></br>
+        <button type="refreshContactAdmin" onClick={handleFetchContactUs}>
+          Refresh
+        </button>
+        <br></br>
 
 
-<h4>
-       <table border={2}>
+        <h4>
+          <table border={2}>
             <tr>
               <th>Contact No.</th>
               <th>Name</th>
@@ -49,41 +40,58 @@ function ContactAdmin() {
               <th>Submit Time</th>
               <th>Reply Status</th>
             </tr>
+
             <tr>
-            <td> 123</td>
-                <td> Shuli</td>
-                <td> swang515@uottawa.ca</td>
-                <td> 3435585817</td>
-                <td> Doctor Replated Queries</td>
-                <td> Is Doctor White available on Oct 19?</td>
-                <td> 2023-10-26 14:58:15</td>
-                <td> 0 </td>
-                </tr>
+              <td> 123</td>
+              <td> Shuli</td>
+              <td> swang515@uottawa.ca</td>
+              <td> 3435585817</td>
+              <td> Doctor Replated Queries</td>
+              <td> Is Doctor White available on Oct 19?</td>
+              <td> 2023-10-26 14:58:15</td>
+              <td> <Checkbox></Checkbox> </td>
+            </tr>
 
 
-                
             {/*
-            {contactUsData.map((contact) => (
-              <tr key={contact.contact_id}>
-                <td> {contact.contact_id}</td>
-                <td> {contact.contact_name}</td>
-                <td> {contact.contact_email}</td>
-                <td> {contact.contact_phone}</td>
-                <td> {contact.contact_topic}</td>
-                <td> {contact.contact_message}</td>
-                <td> {contact.contact_time}</td>
-                <td> {contact.contact_reply}</td>
-              </tr>
-              */}
-       </table>
-       </h4>
-   </div>
-   </div>
-      
-    
+            
+            I dont know why this dont work
+            
+
+
+            
+            {contactUsData.length > 0 && (
+              <div>
+                {contactUsData.map((contact) => (
+                  <li key={contact.id}>
+                    <td> id: {contact.id}</td>
+                    <td> sd{contact.contact_name}</td>
+                    <td> {contact.contact_email}</td>
+                    <td> {contact.contact_phone}</td>
+                    <td> {contact.contact_topic}</td>
+                    <td> {contact.contact_message}</td>
+                    <td> {contact.contact_time}</td>
+                    <td> {contact.contact_reply}</td>
+                  </li>
+                ))}
+              </div>
+            )}
+            
+            
+            
+            */}
+
+          
+
+          </table>
+        </h4>
+      </div>
+    </div>
+
+
 
   );
-  
+
 };
 
 export default ContactAdmin;

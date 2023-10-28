@@ -46,7 +46,7 @@ button[type=refreshContactAdmin] {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-button[type=button]:hover {
+button[type=refreshContactAdmin]:hover {
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif !important;

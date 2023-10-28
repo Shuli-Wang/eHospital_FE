@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-//import '../styles/screens/ContactPage.css';
 import '../styles/screens/Contact.css';
 import axios from "axios"
 
 
 const Contact = () => {
 
-  
+
   const [formData, setFormData] = useState({
     contactTopic: '',
     contactName: '',
@@ -18,9 +17,9 @@ const Contact = () => {
   const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setFormData({
-        ...formData, [name] : value
+      ...formData, [name]: value
     })
   }
 
@@ -36,30 +35,30 @@ const Contact = () => {
       console.log(e);
     }
     const validationErrors = {}
-  //   if(!formData.contactTopic.trim()) {
-  //     validationErrors.contactTopic = "Topic is required"
-  // }
-    if(!formData.contactName.trim()) {
-        validationErrors.contactName = "Name is required"
+    //   if(!formData.contactTopic.trim()) {
+    //     validationErrors.contactTopic = "Topic is required"
+    // }
+    if (!formData.contactName.trim()) {
+      validationErrors.contactName = "Name is required"
     }
 
-    if(!formData.contactEmail.trim()) {
-        validationErrors.contactEmail = "Email is required"
-    } else if(!/\S+@\S+\.\S+/.test(formData.contactEmail)){
-        validationErrors.contactEmail = "Email is not valid"
+    if (!formData.contactEmail.trim()) {
+      validationErrors.contactEmail = "Email is required"
+    } else if (!/\S+@\S+\.\S+/.test(formData.contactEmail)) {
+      validationErrors.contactEmail = "Email is not valid"
     }
 
-    if(!formData.contactPhone.trim()) {
-        validationErrors.contactPhone = "Phone is required"
-    } else if(formData.contactPhone.length < 10){
-        validationErrors.contactPhone = "Phone should be at least 10 digits"
+    if (!formData.contactPhone.trim()) {
+      validationErrors.contactPhone = "Phone is required"
+    } else if (formData.contactPhone.length < 10) {
+      validationErrors.contactPhone = "Phone should be at least 10 digits"
     }
 
-    if(!formData.contactMessage.trim()) {
+    if (!formData.contactMessage.trim()) {
       validationErrors.contactMessage = "Message is required"
-  } else if(formData.contactMessage.length > 10){
+    } else if (formData.contactMessage.length > 10) {
       validationErrors.contactMessage = "Max length is 20 characters"
-  }
+    }
 
     setErrors(validationErrors)
 
@@ -72,14 +71,12 @@ const Contact = () => {
   }
 
   return (
-    <div className='ContactForm'>
     <div className='container'>
       <div className='row'>
         <div className='col-12 text-center'>
-          <div className='contactForm'>
             {/* <form id='contact-form' noValidate> */}
-    <div><h1>How can we help you?</h1></div>
-    <div><h3>We’ll get back to you within 7 working days.</h3></div>
+            <div><h1>How can we help you?</h1></div>
+            <div><h3>We’ll get back to you within 7 working days.</h3></div>
 
     <form onSubmit={handleSubmit}>
     <select name = "contactTopic" class="bg-gray-2 border border-gray-1  

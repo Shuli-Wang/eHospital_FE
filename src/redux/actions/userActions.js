@@ -49,3 +49,13 @@ export const fetchPatientRegistration = () => async (dispatch) => {
   }
 };
 
+export const fetchContactUs = () => async (dispatch) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/users/contact`);
+    dispatch({ type: 'FETCH_PATIENT_REGISTRATION_SUCCESS', payload: response.data });
+  } catch (error) {
+    console.error('Error fetching patient registration:', error);
+    dispatch({ type: 'FETCH_PATIENT_REGISTRATION_FAILURE' });
+  }
+};
+

@@ -143,27 +143,25 @@ const Contact = () => {
       </div>
       <div>
         {/* <label>Confirm Password:</label> */}
-        <input
-          type="text"
-          name="contactMessage"
-          className = 'form-control formInput'
-          placeholder='Max Allowed Characters: 6000'
-          autoComplete='off'
-          onChange={handleChange} 
-        />
-          {errors.contactMessage && <span>{errors.contactMessage}</span>}  
-      </div>
-      <button className='submit-btn' type='submit'>
-                  Submit
-                </button>
-    </form>
-    {/* </form> */}
-              <a href="/ContactAdmin">ContactA</a><br></br>
-   </div>
+        <textarea
+                  name="contactMessage"
+                  className='form-control formInput'
+                  placeholder='Max Allowed Characters: 6000'
+                  autoComplete='off'
+                  rows="12"
+                  onChange={handleChange}
+                />
+                {errors.contactMessage && <span>{errors.contactMessage}</span>}
+              </div>
+              <button className='submit-btn' type='submit'>
+                Submit
+              </button>
+            </form>
+            {/* </form> */}
+            <a href="/ContactAdmin">ContactAdminPage</a><br></br>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

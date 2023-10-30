@@ -5,6 +5,7 @@ import { fetchUsers, fetchPatientRegistration } from '../redux/actions/userActio
 import '../styles/screens/ContactAdmin.css';
 import { Checkbox } from '@mui/material';
 import axios from 'axios'
+import { CheckBox } from '@mui/icons-material';
 
 
 function ContactAdmin() {
@@ -26,7 +27,7 @@ function ContactAdmin() {
 
   //   dispatch(fetchContactUs());
   // };
-
+  
 
   return (
 
@@ -51,15 +52,35 @@ function ContactAdmin() {
               </thead>
               <tbody>
                 {records.map((r,i)=> {
+                  if (r.contact_topic == 0) {
+                    r.contact_topic = "Choose Topic"
+                  }
+                  if (r.contact_topic == 1) {
+                    r.contact_topic = "Doctor Related Queries"
+                  }
+                  if (r.contact_topic == 2) {
+                    r.contact_topic = "Suggestions"
+                  }
+                  if (r.contact_topic == 3) {
+                    r.contact_topic = "Feedback"
+                  }
+                  if (r.contact_topic == 4) {
+                    r.contact_topic = "Technical Issue Reports"
+                  }
+                  
                   return <tr key={i}>
                     <td> {r.id}</td>
                     <td> {r.contact_name}</td>
                     <td> {r.contact_phone}</td>
                     <td> {r.contact_email}</td>
+                    
                     <td> {r.contact_topic}</td>
                     <td> {r.contact_message}</td>
                     <td> {r.contact_time}</td>
                     <td> {r.contact_reply}</td>
+
+
+                    
                     {/* <td> {r.topic}</td>
                     <td> {r.message}</td>
                     <td> {r.time}</td>
